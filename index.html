@@ -748,6 +748,7 @@ footer p { font-size: 0.85rem; }
   position: fixed;
   bottom: 24px;
   right: 24px;
+  left: auto;
   z-index: 9999;
   display: inline-flex;
   align-items: center;
@@ -761,7 +762,8 @@ footer p { font-size: 0.85rem; }
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  width: auto;
+  width: fit-content;
+  max-width: 220px;
   box-shadow: 0 4px 16px rgba(244,162,97,0.5);
 }
 .floating-cta:hover { filter: brightness(1.08); }
