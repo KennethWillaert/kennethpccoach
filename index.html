@@ -1099,6 +1099,18 @@ footer p { font-size: 0.85rem; }
   </div>
 </section>
 
+<!-- FACEBOOK -->
+<section class="facebook-section">
+  <div class="facebook-inner">
+    <h2>Volg mij op Facebook</h2>
+    <p>Handige digitale tips, nieuws en updates — volg de pagina en mis niets!</p>
+    <a href="https://www.facebook.com/kennethpccoach/" target="_blank" class="btn-facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Volg Kenneth PC Coach
+    </a>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -1109,7 +1121,7 @@ footer p { font-size: 0.85rem; }
     </div>
     <div class="footer-links">
       <a href="tel:0495683615">0495 68 36 15</a>
-      <a href="/cdn-cgi/l/email-protection#0348666d6d66776b7360606c62606b43646e626a6f2d606c6e">Kennethpccoach&#64;gmail&#46;com</a>
+      <a href="mailto:Kennethpccoach@gmail.com">Kennethpccoach&#64;gmail&#46;com</a>
       <a href="https://www.facebook.com/kennethpccoach/" target="_blank">Facebook</a>
     </div>
   </div>
@@ -1120,5 +1132,24 @@ footer p { font-size: 0.85rem; }
   📞 Contacteer mij nu
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  window.addEventListen
+<script>
+  window.addEventListener('load', function() {
+    var btn = document.getElementById('hamburger');
+    var menu = document.getElementById('mobileMenu');
+
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+
+    var links = menu.querySelectorAll('a');
+    links.forEach(function(link) {
+      link.addEventListener('click', function() {
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  });
+</script>
+</body>
+</html>
