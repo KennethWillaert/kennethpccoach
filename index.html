@@ -82,14 +82,10 @@ nav {
   transition: all .3s;
 }
 
-/* CSS-only toggle using checkbox */
-#nav-toggle:checked ~ .mobile-menu { display: flex; }
-#nav-toggle:checked + nav .hamburger span:nth-child(1),
-#nav-toggle:checked ~ nav .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-#nav-toggle:checked + nav .hamburger span:nth-child(2),
-#nav-toggle:checked ~ nav .hamburger span:nth-child(2) { opacity: 0; }
-#nav-toggle:checked + nav .hamburger span:nth-child(3),
-#nav-toggle:checked ~ nav .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.mobile-menu.open { display: flex; }
 
 .mobile-menu {
   display: none; position: fixed;
@@ -581,7 +577,7 @@ footer p { font-size: 0.85rem; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-menu { top: 70px; }
-  #nav-toggle:checked ~ .mobile-menu { top: 70px; }
+
 
   .hero {
     height: auto;
@@ -660,11 +656,10 @@ footer p { font-size: 0.85rem; }
     <li><a href="#over-mij">Over mij</a></li>
     <li><a href="#contact" class="nav-cta">Bel of mail mij</a></li>
   </ul>
-  <label class="hamburger" for="nav-toggle" aria-label="Menu">
+  <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
-  </label>
+  </button>
 </nav>
-<input type="checkbox" id="nav-toggle" style="display:none;">
 <div class="mobile-menu" id="mobileMenu">
   <a href="#diensten">Diensten</a>
   <a href="#traject">Traject</a>
