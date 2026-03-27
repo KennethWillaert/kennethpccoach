@@ -642,37 +642,7 @@ footer p { font-size: 0.85rem; }
   footer { padding: 40px 8vw; }
 }
 
-/* ── FLOATING CTA ── */
-.floating-cta {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 999;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--orange);
-  color: var(--white);
-  padding: 13px 20px;
-  border-radius: 50px;
-  width: auto !important;
-  white-space: nowrap;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 8px 24px rgba(244,162,97,0.45);
-  transition: transform .2s, box-shadow .2s;
-  animation: pulse 2.5s ease-in-out infinite;
-}
-.floating-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(244,162,97,0.55);
-}
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 8px 24px rgba(244,162,97,0.45); }
-  50% { box-shadow: 0 8px 32px rgba(244,162,97,0.7); }
-}
+
 @media (max-width: 480px) {
   .floating-cta {
     bottom: 16px;
@@ -772,6 +742,29 @@ footer p { font-size: 0.85rem; }
 @media (max-width: 400px) {
   .fb-banner { top: 64px; }
 }
+
+/* ── FLOATING CTA ── */
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  width: auto;
+  box-shadow: 0 4px 16px rgba(244,162,97,0.5);
+}
+.floating-cta:hover { filter: brightness(1.08); }
 </style>
 </head>
 <body>
@@ -801,7 +794,7 @@ footer p { font-size: 0.85rem; }
 
 <!-- FACEBOOK MINI BANNER -->
 <div class="fb-banner">
-  <p>📘 Volg mij op Facebook voor gratis digitale tips!</p>
+  <p>📘 Volg mij op Facebook!</p>
   <a href="https://www.facebook.com/kennethpccoach/" target="_blank">Volg nu</a>
 </div>
 
