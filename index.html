@@ -647,7 +647,7 @@ footer p { font-size: 0.85rem; }
 .floating-cta {
   position: fixed;
   bottom: 28px;
-  left: 28px;
+  right: 28px;
   z-index: 999;
   display: flex;
   align-items: center;
@@ -680,6 +680,19 @@ footer p { font-size: 0.85rem; }
     padding: 12px 18px;
   }
 }
+
+.nav-fb { display: flex; align-items: center; padding: 4px; transition: opacity .2s; }
+.nav-fb:hover { opacity: 0.7; }
+
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #25D366; color: var(--white);
+  padding: 15px 30px; border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem; font-weight: 600;
+  transition: filter .2s, transform .15s;
+}
+.btn-whatsapp:hover { filter: brightness(1.08); transform: translateY(-1px); }
 </style>
 </head>
 <body>
@@ -693,6 +706,9 @@ footer p { font-size: 0.85rem; }
     <li><a href="#waarom">Waarom Kenneth?</a></li>
     <li><a href="#over-mij">Over mij</a></li>
     <li><a href="#contact" class="nav-cta">Bel of mail mij</a></li>
+  <li><a href="https://www.facebook.com/kennethpccoach/" target="_blank" class="nav-fb" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1F2A44"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -704,6 +720,7 @@ footer p { font-size: 0.85rem; }
   <a href="#waarom">Waarom Kenneth?</a>
   <a href="#over-mij">Over mij</a>
   <a href="#contact" class="mob-cta">📞 Bel of mail mij</a>
+  <a href="https://www.facebook.com/kennethpccoach/" target="_blank">📘 Facebook pagina</a>
 </div>
 
 <!-- HERO -->
@@ -714,7 +731,7 @@ footer p { font-size: 0.85rem; }
       <h1>Computerhulp nodig? <em>Geen probleem.</em></h1>
       <p class="hero-sub">Ik help u stap voor stap beter werken met uw computer. In begrijpbare taal, op uw eigen tempo — online of bij u thuis.</p>
       <div class="hero-buttons">
-        <a href="tel:0495683615" class="btn-primary">📞 0495 68 36 15</a>
+        <a href="https://wa.me/32495683615" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
         <a href="#traject" class="btn-outline">Bekijk het traject</a>
       </div>
     </div>
@@ -928,7 +945,7 @@ footer p { font-size: 0.85rem; }
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
-        <div><strong>E-mail</strong>    <a href="mailto:Kennethpccoach@gmail.com">Kennethpccoach@gmail.com</a>
+        <div><strong>E-mail</strong>    <a href="/cdn-cgi/l/email-protection#f2b9979c9c97869a8291919d93919ab2959f939b9edc919d9f"><span class="__cf_email__" data-cfemail="703b151e1e1504180013131f11131830171d11191c5e131f1d">[email&#160;protected]</span></a>
   </div>
   </div>
 </footer>
@@ -938,7 +955,7 @@ footer p { font-size: 0.85rem; }
   📞 Contacteer mij nu
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   window.addEventListener('load', function() {
     var btn = document.getElementById('hamburger');
     var menu = document.getElementById('mobileMenu');
@@ -948,14 +965,4 @@ footer p { font-size: 0.85rem; }
       menu.classList.toggle('open');
     });
 
-    var links = menu.querySelectorAll('a');
-    links.forEach(function(link) {
-      link.addEventListener('click', function() {
-        btn.classList.remove('open');
-        menu.classList.remove('open');
-      });
-    });
-  });
-</script>
-</body>
-</html>
+  
