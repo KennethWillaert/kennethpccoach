@@ -909,15 +909,19 @@ footer p { font-size: 0.85rem; }
         <input type="hidden" name="_language" value="nl">
         <div class="form-group">
           <label>Uw naam</label>
-          <input type="text" name="naam" placeholder="Jan Janssen" required>
+          <input type="text" name="naam" placeholder="" required>
         </div>
         <div class="form-group">
-          <label>Telefoon of e-mail</label>
-          <input type="text" name="contact" placeholder="0400 00 00 00 of naam@mail.be" required>
+          <label>Uw telefoonnummer</label>
+          <input type="tel" name="telefoon" placeholder="">
+        </div>
+        <div class="form-group">
+          <label>Uw e-mailadres</label>
+          <input type="email" name="email" placeholder="">
         </div>
         <div class="form-group">
           <label>Uw vraag (optioneel)</label>
-          <textarea name="vraag" placeholder="Vertel kort waarmee ik u kan helpen…"></textarea>
+          <textarea name="vraag" placeholder="Stel uw vraag hier"></textarea>
         </div>
         <button type="submit" class="btn-primary" style="width:100%;justify-content:center;border:none;">Verstuur bericht</button>
         <p class="form-note">📞 Liever bellen? Dat mag altijd: <strong>0495 68 36 15</strong></p>
