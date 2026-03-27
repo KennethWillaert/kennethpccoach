@@ -1029,7 +1029,7 @@ footer p { font-size: 0.85rem; }
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
-        <div><strong>E-mail</strong><span class="email-display"></span></div>
+        <div><strong>E-mail</strong>Kennethpccoach&#64;gmail&#46;com</div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📍</div>
@@ -1087,7 +1087,7 @@ footer p { font-size: 0.85rem; }
     </div>
     <div class="footer-links">
       <a href="tel:0495683615">0495 68 36 15</a>
-      <span class="email-display"></span>
+      Kennethpccoach&#64;gmail&#46;com
       <a href="https://www.facebook.com/kennethpccoach/" target="_blank">Facebook</a>
     </div>
   </div>
@@ -1101,18 +1101,6 @@ footer p { font-size: 0.85rem; }
 <script>
   window.addEventListener('load', function() {
 
-  // Render email to avoid Cloudflare protection
-  var u = 'Kennethpccoach';
-  var d = 'gmail.com';
-  var spans = document.querySelectorAll('.email-display');
-  spans.forEach(function(span) {
-    var a = document.createElement('a');
-    a.href = 'mailto:' + u + '@' + d;
-    a.style.color = 'var(--orange)';
-    a.style.fontWeight = '500';
-    a.textContent = u + '@' + d;
-    span.appendChild(a);
-  });
 
     var btn = document.getElementById('hamburger');
     var menu = document.getElementById('mobileMenu');
