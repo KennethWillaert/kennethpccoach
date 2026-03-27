@@ -85,8 +85,6 @@ nav {
 .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-.mobile-menu.open { display: flex; }
-
 .mobile-menu {
   display: none; position: fixed;
   top: 80px; left: 0; right: 0;
@@ -97,6 +95,7 @@ nav {
   box-shadow: 0 8px 24px rgba(31,42,68,0.1);
   flex-direction: column; gap: 0;
 }
+.mobile-menu.open { display: flex; }
 .mobile-menu a {
   color: var(--blue); font-size: 1.1rem; font-weight: 500;
   padding: 14px 0; border-bottom: 1px solid var(--border);
@@ -696,7 +695,7 @@ footer p { font-size: 0.85rem; }
 
 /* ── FACEBOOK SECTIE ── */
 .facebook-section {
-  background: var(--dark-blue, #1F2A44);
+  background: #1F2A44;
   padding: 60px 5vw;
   text-align: center;
 }
@@ -732,6 +731,44 @@ footer p { font-size: 0.85rem; }
   transition: filter .2s, transform .15s;
 }
 .btn-facebook:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+/* ── FACEBOOK MINI BANNER ── */
+.fb-banner {
+  background: #1877F2;
+  padding: 10px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: fixed;
+  top: 80px;
+  left: 0; right: 0;
+  z-index: 998;
+}
+.fb-banner p {
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+.fb-banner a {
+  background: var(--white);
+  color: #1877F2;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: filter .2s;
+}
+.fb-banner a:hover { filter: brightness(0.95); }
+@media (max-width: 768px) {
+  .fb-banner { top: 70px; flex-wrap: wrap; gap: 8px; padding: 8px 5vw; }
+  .fb-banner p { font-size: 0.82rem; }
+}
+@media (max-width: 400px) {
+  .fb-banner { top: 64px; }
+}
 </style>
 </head>
 <body>
@@ -745,9 +782,6 @@ footer p { font-size: 0.85rem; }
     <li><a href="#waarom">Waarom Kenneth?</a></li>
     <li><a href="#over-mij">Over mij</a></li>
     <li><a href="#contact" class="nav-cta">Bel of mail mij</a></li>
-  <li><a href="https://www.facebook.com/kennethpccoach/" target="_blank" class="nav-fb" aria-label="Facebook">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1F2A44"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-    </a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -760,6 +794,12 @@ footer p { font-size: 0.85rem; }
   <a href="#over-mij">Over mij</a>
   <a href="#contact" class="mob-cta">📞 Bel of mail mij</a>
   <a href="https://www.facebook.com/kennethpccoach/" target="_blank">📘 Facebook pagina</a>
+</div>
+
+<!-- FACEBOOK MINI BANNER -->
+<div class="fb-banner">
+  <p>📘 Volg mij op Facebook voor gratis digitale tips!</p>
+  <a href="https://www.facebook.com/kennethpccoach/" target="_blank">Volg nu</a>
 </div>
 
 <!-- HERO -->
@@ -984,8 +1024,67 @@ footer p { font-size: 0.85rem; }
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
-        <div><strong>E-mail</strong>    <a href="/cdn-cgi/l/email-protection#f2b9979c9c97869a8291919d93919ab2959f939b9edc919d9f"><span class="__cf_email__" data-cfemail="703b151e1e1504180013131f11131830171d11191c5e131f1d">[email&#160;protected]</span></a>
+        <div><strong>E-mail</strong><a href="mailto:Kennethpccoach@gmail.com">Kennethpccoach@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div><strong>Werkgebied</strong><span>Online of bij u thuis — heel België</span></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Stuur een berichtje</h3>
+      <form action="https://formspree.io/f/xaqlnkgo" method="POST">
+        <input type="hidden" name="_subject" value="Nieuw bericht via kennethpccoach.be">
+        <input type="hidden" name="_language" value="nl">
+        <div class="form-group">
+          <label>Uw naam</label>
+          <input type="text" name="naam" placeholder="" required>
+        </div>
+        <div class="form-group">
+          <label>Uw telefoonnummer</label>
+          <input type="tel" name="telefoon" placeholder="">
+        </div>
+        <div class="form-group">
+          <label>Uw e-mailadres</label>
+          <input type="email" name="email" placeholder="">
+        </div>
+        <div class="form-group">
+          <label>Uw vraag (optioneel)</label>
+          <textarea name="vraag" placeholder="Stel uw vraag hier"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;border:none;">Verstuur bericht</button>
+        <p class="form-note">📞 Liever bellen? Dat mag altijd: <strong>0495 68 36 15</strong></p>
+      </form>
+    </div>
   </div>
+  </div>
+</section>
+
+<!-- FACEBOOK -->
+<section class="facebook-section">
+  <div class="facebook-inner">
+    <h2>Volg mij op Facebook</h2>
+    <p>Handige digitale tips, nieuws en updates — volg de pagina en mis niets!</p>
+    <a href="https://www.facebook.com/kennethpccoach/" target="_blank" class="btn-facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Volg Kenneth PC Coach
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Kenneth <span>PC</span> Coach</div>
+      <p style="margin-top:5px;">Digitale begeleiding zonder stress</p>
+      <p>© 2026 Kenneth Willaert · Alle rechten voorbehouden</p>
+    </div>
+    <div class="footer-links">
+      <a href="tel:0495683615">0495 68 36 15</a>
+      <a href="mailto:Kennethpccoach@gmail.com">Kennethpccoach@gmail.com</a>
+      <a href="https://www.facebook.com/kennethpccoach/" target="_blank">Facebook</a>
+    </div>
   </div>
 </footer>
 
@@ -994,7 +1093,7 @@ footer p { font-size: 0.85rem; }
   📞 Contacteer mij nu
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   window.addEventListener('load', function() {
     var btn = document.getElementById('hamburger');
     var menu = document.getElementById('mobileMenu');
@@ -1004,4 +1103,14 @@ footer p { font-size: 0.85rem; }
       menu.classList.toggle('open');
     });
 
-  
+    var links = menu.querySelectorAll('a');
+    links.forEach(function(link) {
+      link.addEventListener('click', function() {
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  });
+</script>
+</body>
+</html>
