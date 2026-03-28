@@ -488,12 +488,15 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: start;
+  align-items: stretch;
 }
-.over-mij-left { display: flex; flex-direction: column; }
+.over-mij-left {
+  display: flex;
+  flex-direction: column;
+}
 .over-mij-right {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
 }
 .photo-wrap {
